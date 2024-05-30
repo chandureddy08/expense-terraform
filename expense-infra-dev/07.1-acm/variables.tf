@@ -6,17 +6,20 @@ variable "environment" {
     type = string
     default = "dev"
 }
+
 variable "common_tags" {
     default = {
         Project = "expense"
         Environment = "dev"
         Terraform = "true"
+        Component = "backend"
     }
-}
-variable "db_sg_desciption" {
-    default = "SG for DB Mysql Instances"
 }
 variable "zone_name" {
     type = string
-    default = "chandureddy.online"
+  default = "chandureddy.online"
+}
+variable "zone_id" {
+    type = string
+    default = "Z1007947UZZMRR34QF56"
 }

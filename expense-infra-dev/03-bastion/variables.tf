@@ -6,6 +6,10 @@ variable "environment" {
     type = string
     default = "dev"
 }
+variable "ami_id" {
+    type = string
+    default = "ami-090252cbe067a9e58"
+}
 variable "common_tags" {
     default = {
         Project = "expense"
@@ -15,8 +19,4 @@ variable "common_tags" {
 }
 variable "db_sg_desciption" {
     default = "SG for DB Mysql Instances"
-}
-variable "zone_name" {
-    type = string
-    default = "chandureddy.online"
 }

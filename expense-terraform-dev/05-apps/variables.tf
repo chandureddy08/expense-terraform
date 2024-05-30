@@ -20,3 +20,7 @@ variable "common_tags" {
 variable "db_sg_desciption" {
     default = "SG for DB Mysql Instances"
 }
+variable "zone_name" {
+    type = string
+    default = "chandureddy.online"
+}
