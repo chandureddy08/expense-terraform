@@ -56,7 +56,7 @@ resource "null_resource" "frontend_delete" {
     }
 
     provisioner "local-exec" {
-       command = "aws ec2 terminate-instances --instance-ids ${module.backen.id}"
+       command = "aws ec2 terminate-instances --instance-ids ${module.frontend.id}"
     }
     depends_on = [ aws_ami_from_instance.frontend ]
 }
