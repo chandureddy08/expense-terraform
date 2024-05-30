@@ -133,9 +133,7 @@ resource "aws_autoscaling_group" "frontend" {
 }
 resource "aws_autoscaling_policy" "frontend" {
   name = "${var.project_name}-${var.environment}-${var.common_tags.Component}"
-  scaling_adjustment = 4
-  adjustment_type = "TargetTrackingScaling"
-  cooldown = 300
+  policy_type = "TargetTrackingScaling"
   autoscaling_group_name = aws_autoscaling_group.frontend.name
 
   target_tracking_configuration {
