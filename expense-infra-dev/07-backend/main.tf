@@ -124,7 +124,7 @@ resource "aws_autoscaling_group" "backend" {
     triggers = [ "launch_template" ]
   }
   tag {
-    key = "name"
+    key = "Name"
     value = "${var.project_name}-${var.environment}-${var.common_tags.Component}"
     propagate_at_launch = true
   }
