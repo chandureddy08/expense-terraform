@@ -62,7 +62,7 @@ resource "null_resource" "backend_delete" {
       host = module.backend.private_ip
     }
     provisioner "local-exec" {
-       command = "aws ec2 terminate-instances --instance-ids ${module.backen.id}"
+       command = "aws ec2 terminate-instances --instance-ids ${module.backend.id}"
     }
     depends_on = [ aws_ami_from_instance.backend ]
 }
@@ -139,7 +139,6 @@ resource "aws_autoscaling_group" "backend" {
 }
 resource "aws_autoscaling_policy" "backend" {
   name = "${var.project_name}-${var.environment}-${var.common_tags.Component}"
-  scaling_adjustment = 4
   policy_type = "TargetTrackingScaling"
   autoscaling_group_name = aws_autoscaling_group.backend.name
 

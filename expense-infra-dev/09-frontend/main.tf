@@ -28,8 +28,8 @@ resource "null_resource" "frontend" {
       host = module.frontend.public_ip
     }
     provisioner "file" {
-        source = "${var.common_tags.Component}.sh"
-        destination = "/tmp/${var.common_tags.Component}.sh"
+        source = "frontend.sh"
+        destination = "/tmp/frontend.sh"
     }
     provisioner "remote-exec" {
         inline = [ 
